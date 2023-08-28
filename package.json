@@ -1,0 +1,28 @@
+{
+  "name": "jarkarc-bot-dc",
+  "version": "1.0.0",
+  "description": "Wielki informatyk.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node .",
+    "deployDev": "node deploy.js",
+    "deployProd": "node deploy.js prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bawialnia/jarkarc-bot-dc.git"
+  },
+  "keywords": [
+    "bot",
+    "discord"
+  ],
+  "author": "Indexerrowaty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bawialnia/jarkarc-bot-dc/issues"
+  },
+  "homepage": "https://github.com/Bawialnia/jarkarc-bot-dc#readme",
+  "dependencies": {
+    "discord.js": "^14.9.0"
+  }
+}
