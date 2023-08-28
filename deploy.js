@@ -25,6 +25,17 @@ const rest = new REST().setToken(token);
 
 // and deploy your commands!
 (async () => {
+	if(process.argv[2] === "cleanup") {
+		try {
+			console.log("Cleaning up testing commands");
+			rest.put(Routes.applicationGuildCommands(appID, testingServerID), { body: [] })
+				.then(() => console.log('Successfully deleted all guild commands.'))
+			.catch(console.error);
+		} catch (error) {
+			console.error(error);
+		}
+		return;
+	}
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
