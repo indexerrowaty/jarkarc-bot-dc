@@ -1,7 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
-const { emailBlacklist, procedureRatelimit, emailRegexp } = require("../config/config.js")
+const { emailBlacklist, procedureRatelimit, emailRegexp, newslettery } = require("../config/config.js")
 
-const newslettery = require("../assets/newslettery.js")
 var ratelimited = false
 var liczbaNewsletterow = 0
 
