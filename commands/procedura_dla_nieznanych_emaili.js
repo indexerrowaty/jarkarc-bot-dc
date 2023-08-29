@@ -75,6 +75,6 @@ module.exports = {
 			.setAuthor({ name: "Gotowe!", iconURL: "https://cdn.discordapp.com/attachments/693604907680530442/1145910449095848078/check-mark-icon-png-7.png" })
 			.setTimestamp();
 
-		await interaction.editReply({embeds: [resultMessage]})
+		await interaction.editReply({content: "", embeds: [resultMessage]})
 	},
 }

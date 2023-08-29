@@ -7,10 +7,8 @@ module.exports = {
 
 		const command = interaction.client.commands.get(interaction.commandName);
 	
-		if (!command) {
-			console.error(`Komenda ${interaction.commandName} nie istnieje.`);
-			return;
-		}
+		if (!command)
+			return console.error(`Komenda ${interaction.commandName} nie istnieje.`);
 	
 		try {
 			await command.execute(interaction);
