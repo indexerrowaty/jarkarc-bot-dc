@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node .",
+    "devCleanup": "node deploy.js cleanup",
     "deployDev": "node deploy.js",
     "deployProd": "node deploy.js prod"
   },
@@ -23,6 +24,6 @@
   },
   "homepage": "https://github.com/Bawialnia/jarkarc-bot-dc#readme",
   "dependencies": {
-    "discord.js": "^14.9.0"
+    "discord.js": "^14.13.0"
   }
 }
