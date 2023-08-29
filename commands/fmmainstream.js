@@ -64,7 +64,7 @@ module.exports = {
 		const pierodArg = interaction.options.getString("czas");
 		const period = pierodArg ? pierodArg : "overall"
 		const topArtists = await req("user.getTopArtists", `&user=${userArg}&period=${period}&limit=20`, lastfmtoken)
-		if (topArtists.topartists.artist.length == 0) return interaction.reply("Ten informatyk (albo głupi normik używający macOS albo Windowsa) nic nie słuchał przez określony przez Ciebie czas.")
+		if (topArtists.topartists.artist.length == 0) return interaction.editReply("Ten informatyk (albo głupi normik używający macOS albo Windowsa) nic nie słuchał przez określony przez Ciebie czas.")
 		
 		const topArtistChart = (await req("artist.getInfo", `&artist=Coldplay`, lastfmtoken)).artist
 	
