@@ -56,7 +56,7 @@ module.exports = {
 					{ name: 'Bez przedziału czasowego', value: 'overall' },
 				)),
 	async execute(interaction) {
-		const userArg = interaction.options.getString("kto");
+		const userArg = encodeURI(interaction.options.getString("kto"));
 		const userInfo = (await req("user.getInfo", `&user=${userArg}`, lastfmtoken)).user
 		if (!userInfo) return interaction.reply({ content: "Słaby z Ciebie informatyk. Podaj właściwą nazwę użytkownika. W informatyce nie ma miejsca na pomyłkę, debilu!", ephemeral: true })
 		await interaction.deferReply();
