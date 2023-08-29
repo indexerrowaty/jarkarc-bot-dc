@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"mailerlite": [
 		["Kobieca Foto Szkoła", "c2m5l1", "Kobieca Fotoszkoła nie chce skopiować maila. Słabo. Zobaczmy czy Monika daje słowo jak obiecała.", "Kobieca Fotoszkoła poinformowana! Teraz kolej na Monikę."],
 		["Daję Słowo", "h9j6v0", "Monika nie dała słowa. Co za kurwisko! A obiecała. E-mail pozostaje nieskopiowany! Wstyd, hańba i debilizm! Ciekawe czy Monika Liga trzyma poziom czy informatyka to nie jej liga.", "Monika dała słowo! Jak widać jest słowna. Zobaczmy teraz czy informatyka to liga Moniki Ligi."],

@@ -4,12 +4,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const commands = [];
-// Grab all the command folders from the commands directory you created earlier
 const folderPath = path.join(__dirname, commandsDir);
 
 
 const commandFiles = fs.readdirSync(folderPath).filter(file => file.endsWith('.js'));
-// Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 for (const file of commandFiles) {
 	const filePath = path.join(folderPath, file);
 	const command = require(filePath);
@@ -20,10 +18,8 @@ for (const file of commandFiles) {
 	}
 }
 
-// Construct and prepare an instance of the REST module
 const rest = new REST().setToken(token);
 
-// and deploy your commands!
 (async () => {
 	if(process.argv[2] === "cleanup") {
 		try {
@@ -39,7 +35,6 @@ const rest = new REST().setToken(token);
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
-		// The put method is used to fully refresh all commands in the guild with the current set
 		let data = await rest.put(
 			process.argv[2] ? Routes.applicationCommands(appID) : Routes.applicationGuildCommands(appID, testingServerID),
 			{ body: commands },
@@ -47,7 +42,6 @@ const rest = new REST().setToken(token);
 
 		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
 	} catch (error) {
-		// And of course, make sure you catch and log any errors!
 		console.error(error);
 	}
 })();
