@@ -19,7 +19,6 @@ module.exports = {
 	// Folder locations
 	"commandsDir": "commands", // Directory containing commands. Default: "commands".
 	"eventsDir": "events", // Directory containing events. Default: "events".
-	"voicenotesDir": "./assets/voicenotes/", // Directory containing voice notes. Trailing slash is required. Default: "./assets/voicenotes/".
 
 	// Random message when called
 	"kopieInformatyka": require("./kopieInformatyka.js"), // Path to message list
@@ -30,8 +29,5 @@ module.exports = {
 	"emailBlacklist": [], // Which e-mail(s) to block from executing a procedure on?
 	"emailRegexp": /^(?!\.)[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+/, // E-mail verification regexp.
 	"procedureRatelimit": 60000, // For how long rate limit on e-mail procedure should be enforced? Default: 60000ms.
-
-	// Random voice notes
-	"randomVoiceMemo": 420 // Chance of bot sending random voice notes. Default: 420:1.
 	
 }
