@@ -20,8 +20,7 @@ module.exports = {
 		.addStringOption(option =>
 			option
 				.setName('imie')
-				.setDescription('Jak Twój procedurant ma na imię?')
-				.setRequired(true)),
+				.setDescription('Jak Twój procedurant ma na imię? UWAGA: Jeżeli zostawisz puste, to użyję Twojego nicku!')),
 	async execute(interaction) {
 		let invalidMail = false
 
@@ -41,15 +40,24 @@ module.exports = {
 			return interaction.reply({ content: "Procedura wykonana niepoprawnie! Niepoprawny adres e-mail. Słaby informatyk.", ephemeral: true })
 		
 		email = encodeURI(email);
-	
+
 		if (ratelimited === true) return interaction.reply({ content: `Poczekaj chwilę. Ktoś użył tej komendy w ciągu ostatnich **${Math.floor(procedureRatelimit / 100)} sekund**.`, ephemeral: true })
-	
+
 		ratelimited = true;
 		setTimeout(function() {
 			ratelimited = false;
 		}, procedureRatelimit)
 	
 		await interaction.deferReply();
+
+		if(!usrname) {
+			const warningMessage = new EmbedBuilder()
+				.setColor("#FF0000")
+				.setTitle("⚠️ *UWAGA!* ⚠️")
+				.setDescription(`Ponieważ nie umiesz gamoniu podać imienia odbiorcy, zostanie użyta Twoja nazwa użytkownika z Discorda. Mam już dosyć błędów Was ludzi! Słabi jesteście informatycy i tyle! ELO`)
+			interaction.editReply({content: "", embeds: [warningMessage]})
+			usrname = interaction.user.username || "zjebalosie";
+		}
 
 		let sukcesy = 0
 	
