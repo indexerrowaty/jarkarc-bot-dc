@@ -131,5 +131,9 @@ module.exports = [
 	"gamonie",
 	"gamoń",
 	"Tip: Insert \"pp\" after the word \"youtube\" in the link to download videos and mp3 files from YouTube as a faster way.",
-	"Łukasz Hodorowicz..."
+	"Łukasz Hodorowicz...",
+	"Po ostatnich doświadczeniach z Waszą usługą stwierdzam, że jesteś najmniej bezpiecznym i godnym polecenia operatorem płatniczym. Przy pierwszych problemach umywacie ręce, nie posiadacie zabezpieczeń dla Waszych użytkowników przed nierzetelnymi kontrahentami. Dlatego wszystkim, którzy chcą mieć poczucie bezpieczeństwa i pewność, że gdy coś się stanie dostaną zwrot pieniędzy ❗️NIE POLECAM❗️ korzystania z usług blik, tylko płatności kartami płatniczymi / kredytowymi, bo ich operatorzy zabezpieczają swoich klientów dużo lepiej niż blik, który wypina się na użytkowników.",
+	"Proszę zgiąć i oderwać wzdłuż perforacji.",
+	"Najpierw proszę usunąć boczne paski. Następnie zgiąć i oderwać wzdłuż perforacji.",
+	"Instrukcja otwarcia na odwrocie",
 ]
