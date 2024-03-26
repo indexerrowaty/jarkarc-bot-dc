@@ -17,6 +17,7 @@ module.exports = {
 		["Darmowa lekcja Akordeonu", "m2r1o7", "Gnojki nie chcą dać darmowej lekcji na akordeon. Co za suki!", "Procedurant otrzymał kilka bezpłatnych opracowań utworów biesiadnych na akordeon, bez zobowiązań. Niech mu te lekcje służą!"],
 		["Project Bluebook", "o6i5u5", "Projekt Niebieska Książka nie umie poprawnie kopiować danych. Debile.", "Udało się! Wielka, niebieska księga skopiowała adres e-mail!!!"],
 		["Chuj wie" ,"p4r0q3", "Niestety nie mam zielonego pojęcia komu wysłałem podany przez Ciebie adres e-mail, ale wiem, że go nie skopiowali.", "Pomyślnie przesłałem adres e-mail proceduranta do jakiegoś losowego newslettera, którego nazwy nawet nie znam!"],
-		["Lab Muffin", "h5j6h0", "Niestety muffinkowe laboratorium piękności nie skopiowało maila.", "Udało się! Procedurant został zapisany na newslettera muffinkowego laboratorium piękności! Jeżeli procedurant jest brzydki, to spodziewaj się wielkiego glow upu!!!"]
+		["Lab Muffin", "h5j6h0", "Niestety muffinkowe laboratorium piękności nie skopiowało maila.", "Udało się! Procedurant został zapisany na newslettera muffinkowego laboratorium piękności! Jeżeli procedurant jest brzydki, to spodziewaj się wielkiego glow upu!!!"],
+		["Caligraphy.org", "e7m9b7", "Niestety adresat nie popisze sobie pięknie. Nie przyjęli go do szkoły kaligrafii.", "Elegancko! Adresat teraz może się nauczyć ładnie pisać!"]
 	]
 }
