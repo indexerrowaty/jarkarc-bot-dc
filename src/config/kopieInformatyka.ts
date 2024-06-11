@@ -1,4 +1,4 @@
-module.exports = [
+export const kopieInformatyka = [
 	"Ja",
 	"Ja pierdolę ale kopii dostałem od tego szajsu. Chcesz spróbować?",
 	"To jest GNU/Linux, a nie Linux. Kurwa debilu naucz się informatyki. Pokopiowało Cię do reszty? A przepraszam. Nie ten chat.",

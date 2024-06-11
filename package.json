@@ -2,12 +2,11 @@
   "name": "jarkarc-bot-dc",
   "version": "1.0.0",
   "description": "Wielki informatyk.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "node .",
-    "devCleanup": "node deploy.js cleanup",
-    "deployDev": "node deploy.js",
-    "deployProd": "node deploy.js prod"
+    "dev": "tsx --watch ./src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +22,16 @@
     "url": "https://github.com/Bawialnia/jarkarc-bot-dc/issues"
   },
   "homepage": "https://github.com/Bawialnia/jarkarc-bot-dc#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.1",
+    "@types/node": "^20.14.2",
+    "tsx": "^4.15.2",
+    "typescript": "^5.4.5"
+  },
   "dependencies": {
-    "discord.js": "^14.13.0"
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.4.5",
+    "lastfm-ts-api": "^2.1.0",
+    "neon-env": "^0.2.1"
   }
 }
