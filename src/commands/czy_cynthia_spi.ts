@@ -8,7 +8,7 @@ export async function run(
 	_client: JarkarcClient,
 	interaction: ChatInputCommandInteraction,
 ) {
-	await fetch("https://cynthia.rest/state")
+	fetch("https://cynthia.rest/state")
 		.then((res) => res.json())
 		.then((result) => {
 			if (result.sleeping === false)

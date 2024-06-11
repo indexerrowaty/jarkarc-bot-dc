@@ -6,7 +6,7 @@ export async function messageCreate(client: JarkarcClient, message: Message) {
 	if (message.author.bot) return;
 	if (
 		message.content.match(env.BOT_REGEXP) ||
-		message.mentions.has(client.application.id)
+		message.mentions.has(client.user.id)
 	) {
 		message.reply(
 			kopieInformatyka[Math.floor(Math.random() * kopieInformatyka.length)],

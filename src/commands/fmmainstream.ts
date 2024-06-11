@@ -59,13 +59,12 @@ export async function run(
 	interaction: ChatInputCommandInteraction,
 ) {
 	const userArg = encodeURI(interaction.options.getString("kto"));
-	// const userInfo = (
-	// 	await req("user.getInfo", `&user=${userArg}`, lastfmtoken)
-	// ).user;
+
 	const user = new LastFMUser(env.LAST_FM_TOKEN);
 	const { user: userInfo } = await user.getInfo({
 		user: userArg,
 	});
+
 	if (!userInfo)
 		return interaction.reply({
 			content:
@@ -74,13 +73,8 @@ export async function run(
 		});
 	await interaction.deferReply();
 
-	const pierodArg = interaction.options.getString("czas");
-	const period = pierodArg ? pierodArg : "overall";
-	// const topArtists = await req(
-	// 	"user.getTopArtists",
-	// 	`&user=${userArg}&period=${period}&limit=20`,
-	// 	lastfmtoken,
-	// );
+	const period = interaction.options.getString("czas") || "overall";
+
 	const topArtists = await user.getTopArtists({
 		user: userArg,
 		// @ts-expect-error
@@ -92,6 +86,7 @@ export async function run(
 		return interaction.editReply(
 			"Ten informatyk (albo głupi normik używający macOS albo Windowsa) nic nie słuchał przez określony przez Ciebie czas.",
 		);
+
 	const artist = new LastFMArtist(env.LAST_FM_TOKEN);
 	const { artist: topArtistChart } = await artist.getInfo({
 		artist: "Coldplay",
@@ -104,10 +99,10 @@ export async function run(
 		});
 	}
 
-	// const totalPlays = sum(topArtists.topartists.artist, "playcount");
 	const totalPlays = topArtists.topartists.artist.reduce((a, b) => {
 		return a + Number.parseInt(b.playcount);
 	}, 0);
+
 	let totalScore = 0;
 	let totalCount = 0;
 
