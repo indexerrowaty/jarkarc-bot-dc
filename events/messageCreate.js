@@ -14,9 +14,9 @@ module.exports = {
 					{role: "system", content: AIprompt.replaceAll("${AIusrname}", message.author.displayName)},
 					{role: "user", content: message.content}
 				],
-				max_tokens: 2000,
+				max_tokens: 600,
 			}) 
-			message.channel.send(out.choices[0].message.content || kopieInformatyka[Math.floor(Math.random() * kopieInformatyka.length)]);
+			message.reply(out.choices[0].message.content || kopieInformatyka[Math.floor(Math.random() * kopieInformatyka.length)]);
 		}
 	},
 };
