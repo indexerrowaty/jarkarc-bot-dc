@@ -16,6 +16,10 @@ module.exports = {
 	// last.fm
 	lastfmtoken: "", // last.fm token for fmmainstream command.
 
+	// HuggingFace and AI settings
+	"hfToken": "", // HuggingFace User Access Token.
+	"AIprompt": '', // AI prompt
+
 	// Folder locations
 	commandsDir: "commands", // Directory containing commands. Default: "commands".
 	eventsDir: "events", // Directory containing events. Default: "events".
