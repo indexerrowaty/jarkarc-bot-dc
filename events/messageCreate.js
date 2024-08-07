@@ -7,6 +7,7 @@ module.exports = {
 	async execute(message) {
 		if (message.author.bot) return;
 		if (message.content.match(botnameregexp) || message.mentions.has(appID)) {
+			message.channel.sendTyping()
 			const out = await inference.chatCompletion({
 				model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
 				messages: [{ role: "user", content: `${AIprompt.replaceAll("${AIusrname}", message.author.displayName)} ${message.content}`}],
