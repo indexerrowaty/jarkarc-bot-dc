@@ -19,6 +19,7 @@ module.exports = {
 	// HuggingFace and AI settings
 	hfToken: "", // HuggingFace User Access Token.
 	AIprompt: '', // AI prompt
+	AImodel: "mistralai/Mixtral-8x7B-Instruct-v0.1", // Choose an AI model for use with the bot. Default: "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
 	// Folder locations
 	commandsDir: "commands", // Directory containing commands. Default: "commands".

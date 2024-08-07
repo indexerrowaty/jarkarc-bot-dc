@@ -1,4 +1,4 @@
-const { botnameregexp, kopieInformatyka, appID, hfToken, AIprompt } = require("../config/config.js")
+const { botnameregexp, kopieInformatyka, appID, hfToken, AIprompt, AImodel } = require("../config/config.js")
 const { HfInference } = require("@huggingface/inference")
 const inference = new HfInference(hfToken);
 
@@ -9,7 +9,7 @@ module.exports = {
 		if (message.content.match(botnameregexp) || message.mentions.has(appID)) {
 			message.channel.sendTyping()
 			const out = await inference.chatCompletion({
-				model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
+				model: AImodel,
 				messages: [{ role: "user", content: `${AIprompt.replaceAll("${AIusrname}", message.author.displayName)} ${message.content}`}],
 				max_tokens: 2000,
 			}) 
