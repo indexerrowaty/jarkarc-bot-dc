@@ -10,7 +10,10 @@ module.exports = {
 			message.channel.sendTyping()
 			const out = await inference.chatCompletion({
 				model: AImodel,
-				messages: [{ role: "user", content: `${AIprompt.replaceAll("${AIusrname}", message.author.displayName)} ${message.content}`}],
+				messages: [
+					{role: "system", content: AIprompt.replaceAll("${AIusrname}", message.author.displayName)},
+					{role: "user", content: message.content}
+				],
 				max_tokens: 2000,
 			}) 
 			message.channel.send(out.choices[0].message.content || kopieInformatyka[Math.floor(Math.random() * kopieInformatyka.length)]);
