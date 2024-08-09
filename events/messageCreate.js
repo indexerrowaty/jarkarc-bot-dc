@@ -6,7 +6,7 @@ module.exports = {
 	name: "messageCreate",
 	async execute(message) {
 		if (message.author.bot) return;
-		if (message.content.match(botnameregexp) || message.mentions.has(appID)) {
+		if (message.content.match(botnameregexp) || message.mentions.has(appID, {ignoreEveryone: true, ignoreRoles: true})) {
 			message.channel.sendTyping()
 			const out = await inference.chatCompletion({
 				model: AImodel,
