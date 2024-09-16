@@ -6,12 +6,12 @@ module.exports = {
 		.setDescription('Pozwala zadrwić z firmy VULCAN, używając ich domeny eduvulcan.pl jako URL shortenera.')
     .addStringOption(option =>
 			option
-				.setName('URL')
+				.setName('url')
 				.setDescription('Gdzie ma przekierowywać VULCAN?')
 				.setRequired(true)
     ),
 	execute(interaction) {
-    const plainText = interaction.options.getString("URL")
+    const plainText = interaction.options.getString("url")
     let encodedText = encodeBase32(plainText);
     encodedText = encodedText.replace(/=+$/, '');
     interaction.reply(`https://eduvulcan.pl/dziennik/${encodedText}`)
