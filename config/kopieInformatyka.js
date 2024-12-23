@@ -1,4 +1,4 @@
-module.exports = [
+export default [
 	"Ja",
 	"Ja pierdolę ale kopii dostałem od tego szajsu. Chcesz spróbować?",
 	"To jest GNU/Linux, a nie Linux. Kurwa debilu naucz się informatyki. Pokopiowało Cię do reszty? A przepraszam. Nie ten chat.",
@@ -212,5 +212,26 @@ module.exports = [
 	"Dziekuje za nutke przez przypadek skopalem sasiadke i skakalem 13 latce po glowie i dostalem zakaz zblizania sie do przedszkola oraz dostalem zaproszenie od ecpu na fb ale spokojnie naszczescie odrzucilem je wiec wiem ze jestem safe pozdrawiam oczywiscie wszystko w gtaV",
 	"Dzień dobry. Czy to Twój komunikator internetowy?",
 	"Czy bicie żony kablem HDMI 2.1 ultra high poprawia jakość jej bicia?",
-	"Po tym filmie widać, że Boxdel to nie tylko postać z internetu, ale naprawdę głęboka osobowość."
+	"Po tym filmie widać, że Boxdel to nie tylko postać z internetu, ale naprawdę głęboka osobowość.",
+	"Ale ta Jinx mi się podoba Ale bym ruchał. Tak jak Jan Paweł II ruchał dzieci",
+	"Weź ty sie umów do psychologa człowieku haha",
+	"Bym z tej Jinx nie schodził cały dzień. Ruchałbym ją 30 razy na dzień",
+	"relujesz bratku japi3rdole taka rakieta",
+	"Nareszcie ktoś szczery w komentarzach. Zazwyczaj mi się takie punkowe dziewczyny nie podobają ale Jinx bym po prostu rżnął i ruuchał bez przerwy. Z rana bym musiała obciągać a w nocy by nie spała.",
+	"przeciez to kazdej z nich marzenie, skad sie wziol syndrom szwedzki, wlasnie po takiej co porwali ja we 2ch, dojezdzali codziennie, codziennie rano musiala ciagnac pod stolem jak chciala smietanke do kawy, gdy oni jedli sniadanie. i gdy w koncu ja u nich znalezli , na procesie zeby ich wypuscili bo ona ich obu kocha. i wlasnie tak jest jak maz szlaufe bije to jej watroba od wodki co razem pija nie gnije, i ona nie moze odejsc, to skomplikowane, i tam nie ma gwaltu rozwodowego bo on za nudny byl dla niej. samo zycie. kazda tepa szm.ta otwiera ryj zebys jej go zatkal. im bardziej pyskata tym bardziej lubi. ba powiem ci lepiej, ona nawet nie zna slowa mizoginia. gdzie reszta zna ale nie wie co znaczy. dlatego sie same osmieszaja najlepiej",
+	"Ja jestem blackpilowcem. I ogólnie nienawidzę feminizmu zwłaszcza pop kulturze. woke i murzyni też mnie mierzną",
+	"ja do murzynow nic nie mam, dzis dzieki internetowi mozna poznac inne kultury, nacje, kolor skory, jak komus nie pasuje nie musi tam jechac, ale my nie mozemy tego popierac u nas, a najwiecej krzycza czarnuchy, gdzie prawda jest taka ze sa zbyt leniwi i tepi i szukaja tylko niewolnikow co beda na nich robic jak szlaufy. ale one byly tak tepe ze chcialy rownouprawnienia i teraz nagle go nie chca, bo kopie je w dupe. a ja bardzo lubie jak ludzie dostaja to na co zasluzyli. jestes tego warta",
+	"Przykro się na to patrzy. Też miałem problemy z pornografią, ale to już wyższy stan. Pamiętaj że możesz stać się nowym człowiekiem. Jezus to zapewnia każdemu człowiekowi. Nie zraź się, bo Jezus i jego nauki, które są w Biblii niewiele mają wspólnego z polskim katolicyzmem. Jezus to miłość, katolicyzm to władza. Dla każdego jest miejsce w Jego miłości.",
+	"ja nie mam problemu z pornografia, ja mam problem z simpami i white knightami, ktorzy bronia szlauf przed odpowiedzialnoscia. kazda szlaufa ma wolny wybor, jak bog czy cokolwiek tam jest niby nam dal, my je ostrzegalismy przed konsekwencjami, bredzily ze nie bedziemy kontrolowac ich ciala a dzis placza, dzis chca nasze pianiadze na nie moje bekarty, nasze emerytury, nasze skladki zdrowotne, mimo iz ten worek na sperme nigdy nei placil, jak i nie byl ani sekundy w pracy. tak jak ukry i inne pasozyty. za trans w sporcie tez same lazily na marszach. teraz czas by zbieraly burze, za syf ktore same zasialy. chcialy byc silne i niezalezne to niech teraz maja",
+	"Widzisz, to jest zniewolenie jak każde inne, ale to nie kobiety są zniewolone tylko ty...",
+	"Co ty piierdolisz wieśniaku? Nie nie chciałem być śmieszny deebilu jeebany tylko mówię że mi się podoba Jinx i nie jestem peedofil bo mi się podoba dziewczyna ty Jesteś spiiierdolonym prawiczkiem więc Zamknij piizdę. Twoja matka to kuurwa jebana i robiła wszystkim lody więc Zamknij łeb śmiieciu piierdolony",
+	"Jak rozumiem jesteś przeciętnym dzieckiem które nawet nie zna lore świata.",
+	"@Adamuui to dupek. psy szczekaja, a karuzela kreci sie dalej hahaha",
+	"Dodaj jeszcze że murzynstwo to choroba i trzeba z nia walczyć tak ja z Odrą",
+	"serial dla onanistów przedział 14-37 lat, fapujących do anime. ps laski nie lecą na taki kreskówkowy shit tylko chłopców z siłki :D",
+	"jestem onanistą i chłopcem z siłki, łape robie żeby mocniej bić konia i co teraz?",
+	"oj malej ksiezniczki namiocik, a jadnak one wszystkie jak mowilismy lubia sie bawic w dom, dlatego zamrazaja swoje jajeczka, a na koniec odcinka odzywa sie jej kompleks tatusia. popatrz mala szm.to "little slut have no fear, daddy is here" kocham cie tatusiu, a ja ciebie moj maly woreczku, nikt nie masuje tak czule, tatusia kule. dlatego one dzis wszystkie po samotnej mamusi sa tak zagubione, bo nie wiedza kto jest ich tatusiem i w kazdym szukaja tatusia.",
+	"jestes turbo lipny, krytyk filmowy sie znalazl xd , serial jest zajebisty a ty sie czepiasz nie pasuje to nie ogladaj. zjeb",
+	"Joł, aha...\nSrakojebny pierdogrzmocie\nGrzebiesz w pUTINA wymiocie\nJesteś kuzwa wszędzie na wylocie\nByłeś najsłabszy w miocie\nTy psów pomiocie\nByłeś chójowy w każdym szkolnym przedmiocie\nMasz rzadkich chorób krocie\nNarodowy Fundusz Zabijania ma cię w dupy wylocie\nTy kmiocie\nW poprzednim życiu kaczyńskiego kocie\nTy najtańszy chiński młocie",
+	"chłopie odstaw internet XD Syndrom oblęzonej twierdzy mocno."
 ]
