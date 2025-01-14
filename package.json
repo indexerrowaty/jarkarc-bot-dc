@@ -1,7 +1,7 @@
 {
   "name": "jarkarc-bot-dc",
   "version": "1.0.0",
-  "description": "Wielki informatyk.",
+  "description": "Informatyka. Informatyk. Kopiowanie.",
   "main": "index.js",
   "scripts": {
     "test": "node .",
@@ -11,20 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bawialnia/jarkarc-bot-dc.git"
+    "url": "git+https://github.com/indexerrowaty/jarkarc-bot-dc.git"
   },
   "keywords": [
     "bot",
     "discord"
   ],
-  "author": "Indexerrowaty",
-  "license": "ISC",
+  "author": "indexerrowaty",
+  "license": "GPL-2.0-only",
   "bugs": {
-    "url": "https://github.com/Bawialnia/jarkarc-bot-dc/issues"
+    "url": "https://github.com/indexerrowaty/jarkarc-bot-dc/issues"
   },
-  "homepage": "https://github.com/Bawialnia/jarkarc-bot-dc#readme",
+  "homepage": "https://github.com/indexerrowaty/jarkarc-bot-dc#readme",
   "dependencies": {
-    "@huggingface/inference": "^2.8.0",
-    "discord.js": "^14.13.0"
+    "@huggingface/inference": "^2.8.1",
+    "discord.js": "^14.15.3"
   }
 }
