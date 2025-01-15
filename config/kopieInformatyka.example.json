@@ -1,4 +1,4 @@
-module.exports = [
+[
     "Is this launcher safe?",
     "-----BEGIN PGP SIGNED MESSAGE-----",
 	"-----BEGIN PGP SIGNATURE-----",
@@ -6,6 +6,6 @@ module.exports = [
 	"-----BEGIN PGP PUBLIC KEY BLOCK-----",
 	"-----END PGP PUBLIC KEY BLOCK-----",
     "\\n",
-    "admin:admin"
-    // You should add more random sentences here to make /madrosc command better.
+    "admin:admin",
+    "You should add more random sentences here to make /madrosc command better."
 ]
