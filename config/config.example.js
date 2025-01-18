@@ -29,6 +29,7 @@ module.exports = {
 	// Random message when called
 	kopieInformatyka: require("./kopieInformatyka.json"), // Path to message list
 	botnameregexp: /jaros[lł]aw karcewicz|jarkarc/gi, // Regexp for detecting when people are talking about the bot.
+	gnuLinuxCopypasta: `Kiedy piszesz "Linux", to masz najprawdopodobniej na myśli system operacyjny GNU. Zatem należy pisać GNU/Linux lub GNU+Linux.`, // Message to send when user types Linux instead of GNU/Linux.
 		
 	// E-mail "procedure"
 	newslettery: require("./newslettery.json"), // Path to newsletter list
@@ -36,4 +37,6 @@ module.exports = {
 	emailRegexp: /^(?!\.)[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+/, // E-mail verification regexp.
 	procedureRatelimit: 60000, // Length of rate limit for the procedure. Default: 60000ms.
 	
+	// Strings
+	genericError: "## To nie jest mój najlepszy dzień.\nNastępnym razem skopiuję!" // Generic error message.
 }

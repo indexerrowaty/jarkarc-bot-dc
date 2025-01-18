@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js')
+const { appID } = require("../config/config.js")
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -8,10 +9,10 @@ module.exports = {
 			option
 				.setName('osoba')
 				.setDescription('"Informatyk" do sprawdzenia')
-				.setRequired(true)),
+				.setRequired(false)),
 	async execute(interaction) {
 		const osoba = interaction.options.getUser('osoba');
-		const it = Math.floor(Math.random() * 100)
-		await interaction.reply(`**${osoba.username}** jest informatykiem w \`${it}%\``)
+		const it = osoba.id === appID ? 100 : Math.floor(Math.random() * 100)
+		await interaction.reply(`**${!osoba ? "Jesteś**" : osoba.username + "** jest"} informatykiem w \`${it}%\``)
 	},
 }

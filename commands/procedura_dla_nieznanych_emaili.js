@@ -1,12 +1,16 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
-const { emailBlacklist, procedureRatelimit, emailRegexp, newslettery } = require("../config/config.js")
+const { emailBlacklist, procedureRatelimit, emailRegexp, newslettery, genericError } = require("../config/config.js")
 
-var ratelimited = false
-var liczbaNewsletterow = 0
+var ratelimited, liczbaNewsletterow
 
 for (const e in newslettery) {
 	liczbaNewsletterow += newslettery[e].length
 }
+
+const warningMessage = new EmbedBuilder()
+	.setColor("#FF0000")
+	.setTitle("⚠️ *UWAGA!* ⚠️")
+	.setDescription(`Ponieważ nie umiesz, gamoniu podać imienia odbiorcy, zostanie użyta Twoja nazwa użytkownika z Discorda.\nMiarka się przebrała, mam już dosyć ludzkich błędów! Słabi jesteście informatycy i tyle w temacie!`)
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -15,74 +19,59 @@ module.exports = {
 		.addStringOption(option =>
 			option
 				.setName('email')
-				.setDescription('Adres e-mail proceduranta.')
+				.setDescription('Jaki adres e-mail posiada Twój procedurant?')
 				.setRequired(true))
 		.addStringOption(option =>
 			option
 				.setName('imie')
 				.setDescription('Jak Twój procedurant ma na imię? UWAGA: Jeżeli zostawisz puste, to użyję Twojego nicku!')),
 	async execute(interaction) {
-		let invalidMail = false
 
-		let usrname = interaction.options.getString("imie");
+		const usrname = interaction.options.getString("imie") || interaction.user.username || "zjebalosie";
 		let email = interaction.options.getString("email");
 	
-		emailBlacklist.forEach(e => {
-			if(e === email.replaceAll(".", "").toLowerCase().replaceAll("@googlemailcom", "@gmailcom")) {
-				interaction.reply({ content: "Niestety rozum i godność informatyka zabrania mi wykonać procedurę na podanym przez Ciebie e-mailu.\nPrzykro mi, ale procedurę musisz skopiować ręcznie.", ephemeral: true })
-				invalidMail = true
-			}
-		})
-		if(invalidMail === true) return;
+		if (emailBlacklist.includes(email.replaceAll(".", "").toLowerCase().replaceAll("@googlemailcom", "@gmailcom")))
+			return interaction.reply({ content: genericError, ephemeral: true });
 	
-		const validEmail = emailRegexp
-		if(validEmail.test(email) !== true)
-			return interaction.reply({ content: "Procedura wykonana niepoprawnie! Niepoprawny adres e-mail. Słaby informatyk.", ephemeral: true })
+		if (!emailRegexp.test(email))
+			return interaction.reply({ content: "## Procedura wykonana niepoprawnie!\nNiepoprawny adres e-mail. Słaby informatyk.", ephemeral: true })
+
+		if (ratelimited > Date.now())
+			return interaction.reply({ content: `## Poczekaj chwilę!\nKomenda będzie dostępna za **${Math.ceil((ratelimited - Date.now())/1000)} sekund**.`, ephemeral: true })
 		
+		ratelimited = Date.now() + procedureRatelimit;
+
 		email = encodeURI(email);
-
-		if (ratelimited === true) return interaction.reply({ content: `Poczekaj chwilę. Ktoś użył tej komendy w ciągu ostatnich **${Math.floor(procedureRatelimit / 100)} sekund**.`, ephemeral: true })
-
-		ratelimited = true;
-		setTimeout(function() {
-			ratelimited = false;
-		}, procedureRatelimit)
 	
 		await interaction.deferReply();
 
-		if(!usrname) {
-			const warningMessage = new EmbedBuilder()
-				.setColor("#FF0000")
-				.setTitle("⚠️ *UWAGA!* ⚠️")
-				.setDescription(`Ponieważ nie umiesz gamoniu podać imienia odbiorcy, zostanie użyta Twoja nazwa użytkownika z Discorda. Mam już dosyć błędów Was ludzi! Słabi jesteście informatycy i tyle! ELO`)
-			interaction.editReply({content: "", embeds: [warningMessage]})
-			usrname = interaction.user.username || "zjebalosie";
-		}
+		if(!usrname) interaction.editReply({embeds: [warningMessage]})
 
 		let sukcesy = 0
 	
 		for (const e in newslettery.mailerlite) {
 			await fetch(`https://app.mailerlite.com/webforms/submit/${newslettery.mailerlite[e][1]}?fields%5Bname%5D=${usrname}&fields%5Bemail%5D=${email}&ml-submit=1&ajax=1`)
-				.then(res => res.text())
+				.then(res => res.json())
 				.then(result => {
-					if (JSON.parse(result).success === false)
-						return interaction.editReply(newslettery.mailerlite[e][2])
-					interaction.editReply(`${newslettery.mailerlite[e][3]}`)
-					sukcesy++
+					if (result.success) sukcesy++
 				})
 				.catch(error => {
-					console.log('error', error)
-					interaction.editReply(newslettery.mailerlite[e][2])
+					console.error(`PROCEDURA_ERROR [Newsletter ID: ${e} (${newslettery.mailerlite[e][0]})]:`, error)
 				})
+			interaction.editReply(`
+				## Wykonuję procedurę…\n
+				Teraz e-maila próbuje przyjąć: **${newslettery.mailerlite[e][0]}**\n
+				Póki co **${sukcesy}** z **${liczbaNewsletterow}** serwisów skopiowało adres.
+			`)
 		}
 		
 		const resultMessage = new EmbedBuilder()
-			.setColor("#e67e22")
+			.setColor(sukcesy === liczbaNewsletterow ? "#2ecc71" : "#e67e22")
 			.setTitle("Raport końcowy wykonanej procedury")
 			.setDescription(`**${sukcesy} na ${liczbaNewsletterow}** serwisów pomyślnie skopiowało adres e-mail!`)
 			.setAuthor({ name: "Gotowe!", iconURL: "https://cdn.discordapp.com/attachments/693604907680530442/1145910449095848078/check-mark-icon-png-7.png" })
 			.setTimestamp();
 
-		await interaction.editReply({content: "", embeds: [resultMessage]})
+		await interaction.editReply({embeds: [resultMessage]})
 	},
 }

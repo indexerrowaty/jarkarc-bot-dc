@@ -36,7 +36,7 @@ const req = async (method, params, apikey) => {
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('fmmainstream')
-		.setDescription('Pozwala sprawdzić jak kopiowanej muzyki ktoś słucha.')
+		.setDescription('Pozwala sprawdzić jak bardzo niszowego gówna ktoś słucha.')
 		.addStringOption(option =>
 			option
 				.setName('kto')
@@ -58,13 +58,15 @@ module.exports = {
 	async execute(interaction) {
 		const userArg = encodeURI(interaction.options.getString("kto"));
 		const userInfo = (await req("user.getInfo", `&user=${userArg}`, lastfmtoken)).user
-		if (!userInfo) return interaction.reply({ content: "Słaby z Ciebie informatyk. Podaj właściwą nazwę użytkownika. W informatyce nie ma miejsca na pomyłkę, debilu!", ephemeral: true })
+		if (!userInfo)
+			return interaction.reply({ content: "## Nie rób ze mnie idioty!\nPodaj właściwą nazwę użytkownika. W informatyce nie ma miejsca na pomyłkę, noobie!", ephemeral: true })
 		await interaction.deferReply();
 
 		const pierodArg = interaction.options.getString("czas");
 		const period = pierodArg ? pierodArg : "overall"
 		const topArtists = await req("user.getTopArtists", `&user=${userArg}&period=${period}&limit=20`, lastfmtoken)
-		if (topArtists.topartists.artist.length == 0) return interaction.editReply("Ten informatyk (albo głupi normik używający macOS albo Windowsa) nic nie słuchał przez określony przez Ciebie czas.")
+		if (topArtists.topartists.artist.length == 0)
+			return interaction.editReply("## Brakuje danych!\nTen informatyk (albo słaby macOS lub Windows user) nic nie słuchał przez określony przez Ciebie czas.")
 		
 		const topArtistChart = (await req("artist.getInfo", `&artist=Coldplay`, lastfmtoken)).artist
 	

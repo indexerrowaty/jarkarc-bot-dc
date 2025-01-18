@@ -4,10 +4,11 @@
   "description": "Informatyka. Informatyk. Kopiowanie.",
   "main": "index.js",
   "scripts": {
-    "test": "node .",
-    "devCleanup": "node deploy.js cleanup",
-    "deployDev": "node deploy.js",
-    "deployProd": "node deploy.js prod"
+    "start": "node .",
+    "rmCmdGuild": "node deploy.js r",
+    "mkCmdGuild": "node deploy.js",
+    "rmCmd": "node deploy.js pr",
+    "mkCmd": "node deploy.js p"
   },
   "repository": {
     "type": "git",
