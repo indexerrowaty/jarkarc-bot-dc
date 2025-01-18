@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 const { emailBlacklist, procedureRatelimit, emailRegexp, newslettery, genericError } = require("../config/config.js")
 
-var ratelimited, liczbaNewsletterow
+var ratelimited, liczbaNewsletterow = 0
 
 for (const e in newslettery) {
 	liczbaNewsletterow += newslettery[e].length
